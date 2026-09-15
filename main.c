@@ -6,7 +6,7 @@
 /*   By: yudakane <yudakane@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 20:49:17 by myazawa           #+#    #+#             */
-/*   Updated: 2026/09/13 18:35:33 by yudakane         ###   ########.fr       */
+/*   Updated: 2026/09/15 14:01:00 by yudakane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,19 @@ int	main(int argc, char **argv)
 		return (0);
 	real_argc = argc;
 	real_argv = normalize_args(argc, argv, &real_argc);
-	ret = run_push_swap(real_argc, real_argv);
-	if (argc != real_argc)
+	if (!real_argv)
 	{
-		i = 0;
-		while (real_argv[i])
-		{
-			free(real_argv[i]);
-			i++;
-		}
-		free(real_argv);
+		ft_printf(2, ERROR_MS);
+		return (-1);
 	}
+	ret = run_push_swap(real_argc, real_argv);
+	i = 0;
+	while (real_argv[i])
+	{
+		free(real_argv[i]);
+		i++;
+	}
+	free(real_argv);
 	if (ret == -1)
 		ft_printf(2, ERROR_MS);
 	return (ret);

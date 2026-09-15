@@ -6,7 +6,7 @@
 /*   By: yudakane <yudakane@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 18:44:28 by myazawa           #+#    #+#             */
-/*   Updated: 2026/09/09 15:12:53 by yudakane         ###   ########.fr       */
+/*   Updated: 2026/09/15 12:59:03 by yudakane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void				adaptive_sort(t_stack **a, t_stack **b,
 void				mini_3(t_stack **a, t_stats *sts);
 void				mini_5(t_stack **a, t_stack **b, t_stats *sts);
 char				**normalize_args(int argc, char **argv, int *real_argc);
-char				**build_normalized(char **argv, int last, int *real_argc);
+char				**build_normalized(char *arg, int *real_argc);
 char				*ft_strdup(const char *s);
 char				*ft_substr(char const *s, size_t start, size_t len);
 #endif
